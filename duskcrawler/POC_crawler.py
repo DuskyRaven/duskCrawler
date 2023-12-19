@@ -31,6 +31,52 @@ def process_page(page_url: str):
             ):
                 print(textwrap.fill(text))
             print("")
+            for title1 in tree1.xpath(
+                "//h4[contains(@class, 'header-container mb-1 mb-md-15')]/text()"
+            ):
+                tt1 = title1.__str__().strip()
+                tt2 = tree1.xpath("//h4[contains(text(), 'Daily Food Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                tt3 = tree1.xpath("//h4[contains(text(), 'Daily Home Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                tt4 = tree1.xpath("//h4[contains(text(), 'Daily Dog Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                tt5 = tree1.xpath("//h4[contains(text(), 'Daily Teen Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                tt6 = tree1.xpath("//h4[contains(text(), 'Daily Cat Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                tt7 = tree1.xpath("//h4[contains(text(), 'Daily Bonus Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
+                if tt1 == tt2:
+                    par1 = tree1.xpath("//div[contains(@id, 'content-food')]/text()")
+                    par1 = par1.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par1))
+                elif tt1 == tt3:
+                    par2 = tree1.xpath("//div[contains(@id, 'content-home')]/text()")
+                    par2 = par2.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par2))
+                elif tt1 == tt4:
+                    par3 = tree1.xpath("//div[contains(@id, 'content-dog')]/text()")
+                    par3 = par3.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par3))
+                elif tt1 == tt5:
+                    par4 = tree1.xpath("//div[contains(@id, 'content-teen')]/text()")
+                    par4 = par4.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par4))
+                elif tt1 == tt6:
+                    par5 = tree1.xpath("//div[contains(@id, 'content-cat')]/text()")
+                    par5 = par5.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par5))
+                elif tt1 == tt7:
+                    par6 = tree1.xpath("//div[contains(@id, 'content-bonus')]/text()")
+                    par6 = par6.__str__().strip('["\\n ').strip(' \\n"]').strip("['\\n ").strip(" \\n']").strip()
+                    print(title1)
+                    print(textwrap.fill(par6))
+                else:
+                    print("error")
+
+
+
+
             if full_page_url not in visited_pages:
                 pages_queue.put(full_page_url)
                 visited_pages.add(full_page_url)
