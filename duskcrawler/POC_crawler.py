@@ -1,7 +1,6 @@
 from lxml.etree import HTML
 from requests import get
 import textwrap
-import csv
 import pandas as pd
 # Data for future use if User want data on his computer as file
 data_url = []
@@ -101,7 +100,6 @@ def process_page(page_url: str):
         print("Error retrieving url:", e)
 
 
-print("Example data: ")
 process_page("https://www.astrology.com/horoscope/daily.html")
 #  Saving crawled information in dataset
 dataset = {
@@ -117,7 +115,7 @@ dataset = {
 }
 # Generating dataFrame
 file = pd.DataFrame(dataset)
-# User prompt if they want to save the data as a file on their compiuter
+# User prompt if they want to save the data as a file on their computer
 while True:
     prompt1 = input("Would you like for the data to be saved on your computer?").lower()
     if prompt1 == "yes":
