@@ -132,3 +132,5 @@ while True:
     else:
         print("whaa?")
         print("Answer must be a 'yes' or a 'no' ")
+if __name__ == "__main":
+    process_page("https://www.astrology.com/horoscope/daily.html")

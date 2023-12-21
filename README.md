@@ -1,4 +1,4 @@
-# duskCrawler
+## duskCrawler
 
 duskCrawler is a Python program that crawls throught set horoscope url: https://www.astrology.com/horoscope/daily.html.
 
@@ -11,7 +11,7 @@ pip install duskCrawler
 poetry add duskCrawler
 ```
 
-## requirements
+## Requirements
 
 This module requires the following packages:
 lxml, pandas, pytest, requests
