@@ -701,6 +701,16 @@ files = [
 ]
 
 [[package]]
+name = "timeout-decorator"
+version = "0.5.0"
+description = "Timeout decorator"
+optional = false
+python-versions = "*"
+files = [
+    {file = "timeout-decorator-0.5.0.tar.gz", hash = "sha256:6a2f2f58db1c5b24a2cc79de6345760377ad8bdc13813f5265f6c3e63d16b3d7"},
+]
+
+[[package]]
 name = "tzdata"
 version = "2023.3"
 description = "Provider of IANA time zone data"
@@ -730,4 +740,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5289523d8bc3496d22e577bfa09a08d9f2bf8b68ccddc490938faddae917a6cf"
+content-hash = "09d561202b070127bad9ac9b1634dc32f0b7629a8aba473960428c738549c694"
