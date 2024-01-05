@@ -22,8 +22,8 @@ def process_page(page_url: str):
     tree = HTML(response.text)
     # Retrieving links from main page
     for page_link in tree.xpath(
-    "//a[contains(@class, 'horo-card border-rad-4 px-1 pt-15 pb-2 text-center')]/@href"
-    ):
+        "//a[contains(@class, 'horo-card border-rad-4 px-1 pt-15 pb-2 text-center')]/@href"
+        ):
         full_page_url = page_link
         print("")
         print(f"Article link: {full_page_url}")
@@ -32,22 +32,22 @@ def process_page(page_url: str):
         tree1 = HTML(response1.text)
         # Retrieving date from retrieved links
         for date in tree1.xpath(
-        "//span[contains(@id, 'content-date')]/text()"
-            ):
+            "//span[contains(@id, 'content-date')]/text()"
+                ):
             print(str("\033[1m" + date + "\033[0m"))
             data_date.append(date)
             print("")
             # Retrieving "Daily Horoscope" content from retrieved links
         for text in tree1.xpath(
-        "//span[contains(@style, 'font-weight: 400')]/text()" # //div[contains(@id, 'content')]/p/text()????
-        ):
+            "//span[contains(@style, 'font-weight: 400')]/text()" # //div[contains(@id, 'content')]/p/text()????
+            ):
             data_text.append(text)
             print(textwrap.fill(text))
         print("")
         # Retrieving titles from retrieved links
         for title1 in tree1.xpath(
-        "//h4[contains(@class, 'header-container mb-1 mb-md-15')]/text()"
-        ):
+            "//h4[contains(@class, 'header-container mb-1 mb-md-15')]/text()"
+            ):
             # Required to compare strings from titles
             tt1 = title1.__str__().strip()
             tt2 = tree1.xpath("//h4[contains(text(), 'Daily Food Horoscope')]/text()").__str__().strip("['\\n ").strip(" \\n']").strip()
@@ -131,3 +131,6 @@ while True:
     else:
         print("whaa?")
         print("Answer must be a 'yes' or a 'no' ")
+
+if __name__ == "__main__":
+    process_page()
