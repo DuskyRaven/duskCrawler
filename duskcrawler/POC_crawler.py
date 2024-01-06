@@ -132,5 +132,3 @@ while True:
         print("whaa?")
         print("Answer must be a 'yes' or a 'no' ")
 
-if __name__ == "__main__":
-    process_page()
